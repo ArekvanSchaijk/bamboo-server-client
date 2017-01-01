@@ -1,0 +1,12 @@
+{
+  "name": "arekvanschaijk/bamboo-server-client",
+  "description": "Bamboo Server Client for PHP",
+  "require" : {
+    "guzzlehttp/guzzle" : "^6"
+  },
+  "autoload" : {
+    "psr-4": {
+      "ArekvanSchaijk\\BambooServerClient\\" : "src"
+    }
+  }
+}
