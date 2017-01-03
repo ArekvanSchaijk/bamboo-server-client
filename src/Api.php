@@ -31,7 +31,7 @@ class Api
     /**
      * @var array
      */
-    static protected $options = [];
+    static protected $options = ['headers' => ['Accept' => 'application/json']];
 
     /**
      * Sets the Endpoint
@@ -52,7 +52,7 @@ class Api
      */
     public function login($username, $password)
     {
-        self::$options = ['auth' => [$username, $password], 'headers' => ['Accept' => 'application/json']];
+        self::$options = array_merge(self::$options, ['auth' => [$username, $password]]);
     }
 
     /**
@@ -62,7 +62,7 @@ class Api
      */
     public function logout()
     {
-        self::$options = [];
+        unset(self::$options['auth']);
     }
 
     /**
